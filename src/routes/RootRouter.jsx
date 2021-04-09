@@ -10,6 +10,7 @@ import Configurator from '../components/Configurator'
 import { getNavBarItems } from '../redux/actions/menuActions'
 import { selectMenuItems } from '../redux/selectors/navbarSelector'
 import { getTestimonialsItems } from '../redux/actions/testimonialsActions'
+import { getConfigurator } from '../redux/actions/configuratorActions'
 
 const RootRouter = () => {
   const dispatch = useDispatch()
@@ -17,6 +18,7 @@ const RootRouter = () => {
   useEffect(() => {
     dispatch(getNavBarItems())
     dispatch(getTestimonialsItems())
+    dispatch(getConfigurator())
   }, [dispatch])
   return (
     <Router>

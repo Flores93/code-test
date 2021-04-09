@@ -36,7 +36,9 @@ const TestimonialComponent = () => {
   return (
     <div className="testimonialMargins animate__animated animate__fadeIn">
       <div className="title">
-        <h2>{slider.title}</h2>
+        <h2>
+          <b>{slider.title}</b>
+        </h2>
       </div>
       {sliderState.map((review, index) => {
         return (
@@ -51,7 +53,11 @@ const TestimonialComponent = () => {
       <div className="testimonialsButtons">
         <BelloteroButton
           style={{ paddingLeft: '30px', paddingRight: '30px', marginRight: '1px' }}
-          label={`${counter + 1}/${slider.reviews.length}`}
+          label={
+            <em>
+              {counter + 1}/{slider.reviews.length}
+            </em>
+          }
           disabled
         />
         <BelloteroButton label={<i className="fas fa-arrow-left" />} onClick={prev} />

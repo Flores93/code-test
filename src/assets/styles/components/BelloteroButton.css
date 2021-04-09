@@ -1,0 +1,12 @@
+.belloteroButton {
+  background-color: #071eb3;
+  color: white;
+  border: none;
+  padding: 14px;
+  outline: none;
+  transition: 0.5s;
+}
+
+.belloteroButton:hover {
+  background-color: #0a28e7;
+}

@@ -4,7 +4,7 @@ const initState = {
   ingredientTxt: 'Monthly ingredient spending',
   processTxt: 'Full-time employees that process invoices',
   foodSavingsTxt: 'Estimated cost food savings',
-  annualSavings: 'Your estimated annual savings',
+  annualSavingsTxt: 'Your estimated annual savings',
 }
 
 export const configuratorReducer = (state = initState, action) => {

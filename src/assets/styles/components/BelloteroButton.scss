@@ -1,0 +1,14 @@
+.BelloteroBtn {
+  .belloteroButton {
+    background-color: $belloteroBlue;
+    color: white;
+    border: none;
+    padding: 14px;
+    outline: none;
+    transition: 0.5s;
+  }
+
+  .belloteroButton:hover {
+    background-color: $belloteroHoverBlue;
+  }
+}

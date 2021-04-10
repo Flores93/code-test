@@ -20,15 +20,16 @@ const RootRouter = () => {
     dispatch(getTestimonialsItems())
     dispatch(getConfigurator())
   }, [dispatch])
+
+  const menuItemsFiltered = menuItems.filter(item => item.route !== '#')
   return (
     <Router>
       <NavbarComponent />
       <div className="container mt-5">
         <Switch>
-          {menuItems.map(({ route, text }) => (
+          {menuItemsFiltered.map(({ route, text }) => (
             <Route
               key={text}
-              exact
               path={`/${route}`}
               component={text === 'Testimonial' ? Testimonial : Configurator}
             />

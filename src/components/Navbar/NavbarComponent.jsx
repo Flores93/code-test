@@ -10,9 +10,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
-  // menuButton: {
-  //   marginRight: theme.spacing(2),
-  // },
   title: {
     flexGrow: 1,
     display: 'none',
@@ -43,9 +40,9 @@ const NavbarComponent = () => {
   return (
     <>
       <div className={classes.root}>
-        <AppBar color="inherit" position="static">
+        <AppBar elevation={0} color="inherit" position="static">
           <div className="container">
-            <Toolbar>
+            <Toolbar className="Navbar">
               <img src={belloteroLogo} alt="Belloterio.io" />
               <div className={classes.title} />
               {menuItems.map(({ route, text }) => (

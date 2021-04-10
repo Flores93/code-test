@@ -1,5 +1,3 @@
-import './../../assets/styles/components/Configurator.css'
-
 const Card = ({ title, description }) => {
   const arraify = title.split(' ')
   var line1 = arraify.filter((arr, index) => index <= 2)

@@ -2,7 +2,7 @@ import RootRouter from './routes/RootRouter'
 
 import TheOnlySourceOfTruth from './redux/store/TheOnlySourceOfTruth'
 
-import './assets/styles/App.css'
+import './assets/styles/styles.scss'
 
 function App() {
   return (

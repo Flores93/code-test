@@ -1,10 +1,12 @@
+import { useEffect } from 'react'
 import { AppBar, fade, makeStyles, Toolbar } from '@material-ui/core'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import NavLinkItem from './NavLinkItem'
 
 import belloteroLogo from '../../assets/img/bellotero.png'
 import { selectMenuItems } from '../../redux/selectors/navbarSelector'
+import { getNavBarItems } from '../../redux/actions/menuActions'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,7 +36,13 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const NavbarComponent = () => {
+  const dispatch = useDispatch()
   const menuItems = useSelector(selectMenuItems)
+
+  useEffect(() => {
+    dispatch(getNavBarItems())
+  }, [dispatch])
+
   const classes = useStyles()
 
   return (

@@ -1,19 +1,25 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import BelloteroButton from '../BelloteroButton'
 import Slider from './Slider'
 
 import { selectSlider } from '../../redux/selectors/testimonialsSelectors'
+import { getTestimonialsItems } from '../../redux/actions/testimonialsActions'
 
 const TestimonialComponent = () => {
+  const dispatch = useDispatch()
   const slider = useSelector(selectSlider)
   const [counter, setCounter] = useState(0)
   const [sliderState, setSliderState] = useState([])
 
   useEffect(() => {
+    dispatch(getTestimonialsItems())
+  }, [dispatch])
+
+  useEffect(() => {
     slider && setSliderState(slider.reviews.filter((review, index) => index === counter))
-  }, [slider, counter])
+  }, [slider, counter, dispatch])
 
   if (!slider) {
     return <h3>Loading...</h3>

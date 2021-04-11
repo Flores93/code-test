@@ -31,7 +31,7 @@ const TestimonialComponent = () => {
     setSliderState(prevItem)
   }
   const next = () => {
-    setCounter(counter === 1 ? 1 : counter + 1)
+    setCounter(counter === slider.reviews.length - 1 ? slider.reviews.length - 1 : counter + 1)
     const nextItem = slider.reviews.filter((review, index) => index === counter)
     setSliderState(nextItem)
   }

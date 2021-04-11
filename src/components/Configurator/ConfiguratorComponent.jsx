@@ -1,3 +1,4 @@
+import { CircularProgress } from '@material-ui/core'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -17,7 +18,11 @@ const Configurator = () => {
   const calculator = useSelector(selectCalculator)
 
   if (!calculator) {
-    return <h3>Loading...</h3>
+    return (
+      <div className="centerThis">
+        <CircularProgress />
+      </div>
+    )
   }
 
   return (

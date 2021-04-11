@@ -1,3 +1,4 @@
+import { CircularProgress } from '@material-ui/core'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -22,7 +23,11 @@ const TestimonialComponent = () => {
   }, [slider, counter, dispatch])
 
   if (!slider) {
-    return <h3>Loading...</h3>
+    return (
+      <div className="centerThis">
+        <CircularProgress />
+      </div>
+    )
   }
 
   const prev = () => {
